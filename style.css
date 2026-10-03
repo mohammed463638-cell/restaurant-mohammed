@@ -1,0 +1,131 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1a1a2e;
+}
+
+canvas {
+  display: block;
+  /* Pixel-perfect scaling — no blurry edges */
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.food-img {
+  width: 60% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 15px auto !important;
+  border-radius: 15px;
+}
+.order-btn {
+  display: block;
+  width: 80%;
+  margin: 15px auto 5px;
+  padding: 12px;
+  background: #25D366;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 17px;
+}
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding-bottom: 15px;
+}
+
+.card-content {
+  padding: 12px;
+}
+
+.card h3 {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+@media (max-width: 600px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
+}
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 12px 0;
+}
+
+.quantity button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 20px;
+}
+
+.quantity span {
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+
+  nav {
+    padding: 12px 15px;
+  }
+
+  nav a {
+    display: none;
+  }
+
+  .hero {
+    min-height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .container {
+    padding: 50px 15px;
+  }
+
+}
+
+/* ===== سلة الطلبات ===== */
+
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* باقي كود السلة هنا */
+
+</style>

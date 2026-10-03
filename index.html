@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مطعم محمد | طعم يستحق التجربة</title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    /* ===== الشريط العلوي ===== */
+
+    nav {
+      background: white;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      margin-right: 15px;
+    }
+
+    /* ===== الواجهة الرئيسية ===== */
+
+    .hero {
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.65),
+          rgba(0,0,0,0.65)
+        ),
+        linear-gradient(135deg, #8e2de2, #ff512f);
+
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 21px;
+      margin-bottom: 30px;
+      color: #eee;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .btn-menu {
+      background: white;
+      color: #222;
+    }
+
+    /* ===== الأقسام ===== */
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #777;
+    }
+
+    /* ===== المنتجات ===== */
+
+   .menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 15px;
+}
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .food-image {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 75px;
+      background: #eee;
+    }
+
+    .card-content {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #777;
+      font-size: 15px;
+    }
+
+    .price {
+      color: #e74c3c;
+      font-size: 21px;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+      </section>
+
+
+  <!-- هنا تنتهي القائمة -->
+
+
+  <!-- سلة الطلبات -->
+
+
+    /* ===== لماذا نحن ===== */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(200px, 1fr)
+      );
+      gap: 20px;
+    }
+
+    .feature {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== معلومات المطعم ===== */
+
+    .info {
+      background: #222;
+      color: white;
+      border-radius: 20px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .info p {
+      margin: 8px 0;
+      color: #ddd;
+    }
+
+    /* ===== واتساب ثابت ===== */
+
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 2000;
+    }
+
+    /* ===== الفوتر ===== */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    /* ===== الهاتف ===== */
+
+    @media (max-width: 600px) {
+
+      nav {
+        padding: 12px 15px;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      .container {
+        padding: 50px 15px;
+      }
+
+    }
+
+/* ===== سلة الطلبات ===== */
+
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-info h3 {
+  margin-bottom: 5px;
+}
+
+.cart-item-info p {
+  color: #777;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-quantity button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-total {
+  background: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.cart-button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  background: #25D366;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* ===== تنسيق سلة الطلبات ===== */
+
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-item {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-info h3 {
+  margin-bottom: 5px;
+}
+
+.cart-item-info p {
+  color: #777;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-quantity button {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-total {
+  background: #222;
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.cart-button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 16px;
+  border: none;
+  border-radius: 30px;
+  background: #25D366;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* ===== بيانات العميل ===== */
+
+.customer-info {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.customer-info h3 {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.customer-info input,
+.customer-info textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.customer-info textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.customer-info input:focus,
+.customer-info textarea:focus {
+  outline: none;
+  border-color: #25D366;
+}
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- الشريط العلوي -->
+
+  <nav>
+
+    <div class="logo">
+      🍔 مطعم محمد
+    </div>
+
+    <div>
+      <a href="#menu">القائمة</a>
+      <a href="#about">لماذا نحن؟</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+
+  </nav>
+
+
+  <!-- الواجهة الرئيسية -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>🍔 مطعم محمد</h1>
+
+      <p>
+        وجبات طازجة، طعم مميز، وخدمة تستحق التجربة
+      </p>
+
+      <a
+        href="#menu"
+        class="btn btn-menu">
+        شاهد القائمة
+      </a>
+
+      <a
+        href="https://wa.me/967700000000"
+        class="btn btn-whatsapp">
+        اطلب عبر واتساب
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- القائمة -->
+
+  <section id="menu" class="container">
+
+    <div class="section-title">
+
+      <h2>🍽️ قائمتنا</h2>
+
+      <p>
+        اختر وجبتك المفضلة
+      </p>
+
+    </div>
+
+
+    <div class="menu">
+
+
+      <div class="card">
+
+<img src="Burger.jpg"
+     alt="برجر كلاسيك"
+     style="width:250px; height:180px; object-fit:contain; display:block; margin:15px auto;">
+
+       <div class="card">
+
+  <img
+    src="burger.jpg"
+    alt="برجر كلاسيك"
+    class="food-img">
+
+  <div class="card-content">
+
+    <h3>برجر كلاسيك</h3>
+
+    <p>
+      لحم طازج، جبن، خس وطماطم
+    </p>
+
+   <div class="price" id="burger-price">1500 ريال</div>
+
+<div class="quantity">
+  <button onclick="changeQuantity(-1)">−</button>
+  <span id="burger-quantity">1</span>
+  <button onclick="changeQuantity(1)">+</button>
+</div>
+
+<a href="#" onclick="addToCart('برجر كلاسيك', burgerPrice, burgerQuantity); return false;" class="order-btn">
+  🛒 أضف للسلة
+</a>
+
+  </div>
+
+</div>
+
+      </div>
+
+<div class="card">
+
+  <img src="chicken.jpg"
+       alt="وجبة دجاج"
+       style="width:250px; height:180px; object-fit:contain; display:block; margin:15px auto;">
+
+  <div class="card-content">
+
+    <h3>وجبة دجاج</h3>
+
+    <p>دجاج طازج مع بطاطس وصلصة</p>
+
+<div class="price" id="chicken-price">2000 ريال</div>
+
+<div class="quantity">
+  <button onclick="changeChicken(-1)">−</button>
+  <span id="chicken-quantity">1</span>
+  <button onclick="changeChicken(1)">+</button>
+</div>
+
+    <a href="#" onclick="addToCart('وجبة دجاج', chickenPrice, chickenQuantity); return false;" class="order-btn">
+  🛒 أضف للسلة
+</a>
+  </div>
+
+</div>
+
+      <div class="card">
+
+        <div class="food-image">
+          🍔
+        </div>
+
+        <div class="card-content">
+
+          <h3>برجر دبل</h3>
+
+          <p>
+            قطعتان من اللحم مع الجبن
+          </p>
+
+          <div class="price">
+            2500 ريال
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="food-image">
+          🍕
+        </div>
+
+        <div class="card-content">
+
+          <h3>بيتزا خاصة</h3>
+
+          <p>
+            جبن، خضار وصلصة خاصة
+          </p>
+
+        <div class="price" id="pizza-price">2500 ريال</div>
+
+<div class="quantity">
+  <button onclick="changePizza(-1)">−</button>
+  <span id="pizza-quantity">1</span>
+  <button onclick="changePizza(1)">+</button>
+</div>
+
+<a href="#" onclick="addToCart('بيتزا خاصة', pizzaPrice, pizzaQuantity); return false;" class="order-btn">
+  🛒 أضف للسلة
+</a>
+        </div>
+
+      </div>
+
+
+      <div class="card">
+
+        <div class="food-image">
+          🍟
+        </div>
+
+        <div class="card-content">
+
+          <h3>بطاطس</h3>
+
+          <p>
+            بطاطس مقرمشة ولذيذة
+          </p>
+
+         <div class="price" id="fries-price">800 ريال</div>
+
+<div class="quantity">
+  <button onclick="changeFries(-1)">−</button>
+  <span id="fries-quantity">1</span>
+  <button onclick="changeFries(1)">+</button>
+</div>
+
+<a href="#" onclick="addToCart('بطاطس', friesPrice, friesQuantity); return false;" class="order-btn">
+  🛒 أضف للسلة
+</a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+<!-- سلة الطلبات -->
+
+<section id="cart" class="container">
+
+  <div class="section-title">
+    <h2>🛒 سلة الطلبات</h2>
+    <p>راجع طلبك قبل إرساله</p>
+  </div>
+
+  <div id="cart-items"></div>
+<!-- بيانات العميل -->
+
+<div class="customer-info">
+
+  <h3>📋 بيانات الطلب</h3>
+
+  <input
+    type="text"
+    id="customer-name"
+    placeholder="👤 اسمك"
+  >
+
+  <input
+    type="text"
+    id="customer-address"
+    placeholder="📍 العنوان"
+  >
+
+  <input
+    type="tel"
+    id="customer-phone"
+    placeholder="📞 رقم الهاتف"
+  >
+
+  <textarea
+    id="customer-notes"
+    placeholder="📝 ملاحظات إضافية (اختياري)"
+  ></textarea>
+
+</div>
+  <div class="cart-total">
+    الإجمالي: <span id="cart-total">0</span> ريال
+  </div>
+
+  <button onclick="sendCartToWhatsApp()" class="cart-button">
+    📱 إرسال الطلب عبر واتساب
+  </button>
+
+</section>
+
+  <!-- لماذا نحن -->
+
+  <section id="about" class="container">
+
+    <div class="section-title">
+
+      <h2>⭐ لماذا نحن؟</h2>
+
+      <p>
+        نهتم بالتفاصيل التي تجعل تجربتك أفضل
+      </p>
+
+    </div>
+
+
+    <div class="features">
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🥩
+        </div>
+
+        <h3>مكونات طازجة</h3>
+
+        <p>
+          نستخدم مكونات مختارة بعناية.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h3>خدمة سريعة</h3>
+
+        <p>
+          نعمل على تجهيز طلبك بأسرع وقت.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ❤️
+        </div>
+
+        <h3>نهتم بعملائنا</h3>
+
+        <p>
+          رضا العميل هو أهم ما لدينا.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- التواصل -->
+
+  <section id="contact" class="container">
+
+    <div class="info">
+
+      <h2>📍 تواصل معنا</h2>
+
+      <p>📍 صنعاء - اليمن</p>
+
+      <p>🕐 يوميًا: 10 صباحًا - 11 مساءً</p>
+
+      <p>📞 700 000 000</p>
+
+      <a
+        href="https://wa.me/967700000000"
+        class="btn btn-whatsapp">
+
+        💬 تواصل معنا عبر واتساب
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- أسفل الموقع -->
+
+  <footer>
+
+    © 2026 مطعم محمد
+
+  </footer>
+
+
+  <!-- زر واتساب ثابت -->
+
+  <a
+    href="https://wa.me/967700000000"
+    class="floating-whatsapp">
+
+    💬
+
+  </a>
+<script>
+let burgerQuantity = 1;
+const burgerPrice = 1500;
+
+function changeQuantity(change) {
+  burgerQuantity += change;
+
+  if (burgerQuantity < 1) {
+    burgerQuantity = 1;
+  }
+
+  document.getElementById("burger-quantity").textContent = burgerQuantity;
+
+  const total = burgerPrice * burgerQuantity;
+
+  document.getElementById("burger-price").textContent =
+    total + " ريال";
+}
+</script>
+<script>
+function orderBurger() {
+  const quantity = burgerQuantity;
+  const total = burgerPrice * quantity;
+
+  const message =
+    "مرحباً، أريد طلب برجر كلاسيك" +
+    "%0Aالكمية: " + quantity +
+    "%0Aالسعر: " + total + " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+}
+</script>
+<script>
+let chickenQuantity = 1;
+const chickenPrice = 2000;
+
+function changeChicken(change) {
+  chickenQuantity += change;
+
+  if (chickenQuantity < 1) {
+    chickenQuantity = 1;
+  }
+
+  document.getElementById("chicken-quantity").textContent = chickenQuantity;
+
+  const total = chickenPrice * chickenQuantity;
+
+  document.getElementById("chicken-price").textContent =
+    total + " ريال";
+}
+
+function orderChicken() {
+  const total = chickenPrice * chickenQuantity;
+
+  const message =
+    "مرحباً، أريد طلب وجبة دجاج" +
+    "%0Aالكمية: " + chickenQuantity +
+    "%0Aالإجمالي: " + total + " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+}
+</script>
+<script>
+let friesQuantity = 1;
+const friesPrice = 800;
+
+function changeFries(change) {
+  friesQuantity += change;
+
+  if (friesQuantity < 1) {
+    friesQuantity = 1;
+  }
+
+  document.getElementById("fries-quantity").textContent = friesQuantity;
+
+  document.getElementById("fries-price").textContent =
+    (friesPrice * friesQuantity) + " ريال";
+}
+
+function orderFries() {
+  const total = friesPrice * friesQuantity;
+
+  const message =
+    "مرحباً، أريد طلب بطاطس مقلية" +
+    "%0Aالكمية: " + friesQuantity +
+    "%0Aالإجمالي: " + total + " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+}
+
+
+let drinkQuantity = 1;
+const drinkPrice = 500;
+
+function changeDrink(change) {
+  drinkQuantity += change;
+
+  if (drinkQuantity < 1) {
+    drinkQuantity = 1;
+  }
+
+  document.getElementById("drink-quantity").textContent = drinkQuantity;
+
+  document.getElementById("drink-price").textContent =
+    (drinkPrice * drinkQuantity) + " ريال";
+}
+
+function orderDrink() {
+  const total = drinkPrice * drinkQuantity;
+
+  const message =
+    "مرحباً، أريد طلب مشروب بارد" +
+    "%0Aالكمية: " + drinkQuantity +
+    "%0Aالإجمالي: " + total + " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+}
+</script>
+<script>
+let pizzaQuantity = 1;
+const pizzaPrice = 2500;
+
+function changePizza(change) {
+  pizzaQuantity += change;
+
+  if (pizzaQuantity < 1) {
+    pizzaQuantity = 1;
+  }
+
+  document.getElementById("pizza-quantity").textContent = pizzaQuantity;
+
+  document.getElementById("pizza-price").textContent =
+    (pizzaPrice * pizzaQuantity) + " ريال";
+}
+
+function orderPizza() {
+  const total = pizzaPrice * pizzaQuantity;
+
+  const message =
+    "مرحباً، أريد طلب بيتزا خاصة" +
+    "%0Aالكمية: " + pizzaQuantity +
+    "%0Aالإجمالي: " + total + " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+}
+</script>
+<script>
+/* ===== نظام سلة الطلبات ===== */
+
+let cart = {};
+
+function addToCart(name, price, quantity) {
+
+  if (cart[name]) {
+    cart[name].quantity += quantity;
+  } else {
+    cart[name] = {
+      price: price,
+      quantity: quantity
+    };
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  for (let name in cart) {
+
+    const item = cart[name];
+
+    const itemTotal = item.price * item.quantity;
+
+    total += itemTotal;
+
+    cartItems.innerHTML += `
+      <<div class="cart-item">
+
+  <div class="cart-item-info">
+    <h3>${name}</h3>
+    <p>${itemTotal} ريال</p>
+  </div>
+
+  <div class="cart-quantity">
+
+    <button onclick="changeCartQuantity('${name}', -1)">
+      −
+    </button>
+
+    <span>${item.quantity}</span>
+
+    <button onclick="changeCartQuantity('${name}', 1)">
+      +
+    </button>
+
+  <button type="button" onclick="delete cart['${name}']; updateCart();">
+  🗑️
+</button>
+
+  </div>
+
+</div>
+
+        <div class="cart-quantity">
+
+          <button onclick="changeCartQuantity('${name}', -1)">
+            −
+          </button>
+
+          <span>${item.quantity}</span>
+
+          <button onclick="changeCartQuantity('${name}', 1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+  cartTotal.textContent = total;
+}
+
+function changeCartQuantity(name, change) {
+
+  cart[name].quantity += change;
+
+  if (cart[name].quantity <= 0) {
+    delete cart[name];
+  }
+
+  updateCart();
+}
+
+function sendCartToWhatsApp() {
+
+  if (Object.keys(cart).length === 0) {
+    alert("السلة فارغة");
+    return;
+  }
+
+  const name = document.getElementById("customer-name").value.trim();
+  const address = document.getElementById("customer-address").value.trim();
+  const phone = document.getElementById("customer-phone").value.trim();
+  const notes = document.getElementById("customer-notes").value.trim();
+
+  if (name === "") {
+    alert("يرجى كتابة اسمك");
+    return;
+  }
+
+  if (address === "") {
+    alert("يرجى كتابة العنوان");
+    return;
+  }
+
+  if (phone === "") {
+    alert("يرجى كتابة رقم الهاتف");
+    return;
+  }
+
+  let message = "🍽️ طلب جديد من مطعم محمد%0A%0A";
+
+  message += "👤 الاسم: " + name + "%0A";
+  message += "📍 العنوان: " + address + "%0A";
+  message += "📞 الهاتف: " + phone + "%0A";
+
+  if (notes !== "") {
+    message += "📝 الملاحظات: " + notes + "%0A";
+  }
+
+  message += "%0A🛒 الطلب:%0A";
+
+  let total = 0;
+
+  for (let product in cart) {
+
+    const item = cart[product];
+    const itemTotal = item.price * item.quantity;
+
+    total += itemTotal;
+
+    message +=
+      "🍽️ " + product +
+      " × " + item.quantity +
+      " = " + itemTotal + " ريال%0A";
+  }
+
+  message +=
+    "%0A💰 الإجمالي: " +
+    total +
+    " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+}
+</script>
+<script>
+/* ===== نظام سلة الطلبات ===== */
+
+let cart = {};
+
+function addToCart(name, price, quantity) {
+
+  if (cart[name]) {
+    cart[name].quantity += quantity;
+  } else {
+    cart[name] = {
+      price: price,
+      quantity: quantity
+    };
+  }
+
+  updateCart();
+}
+
+
+function updateCart() {
+
+  const cartItems = document.getElementById("cart-items");
+  const cartTotal = document.getElementById("cart-total");
+
+  cartItems.innerHTML = "";
+
+  let total = 0;
+
+  for (let name in cart) {
+
+    const item = cart[name];
+
+    const itemTotal = item.price * item.quantity;
+
+    total += itemTotal;
+
+    cartItems.innerHTML += `
+      <div class="cart-item">
+
+        <div class="cart-item-info">
+          <h3>${name}</h3>
+          <p>${itemTotal} ريال</p>
+        </div>
+
+        <div class="cart-quantity">
+
+          <button onclick="changeCartQuantity('${name}', -1)">
+            −
+          </button>
+
+          <span>${item.quantity}</span>
+
+          <button onclick="changeCartQuantity('${name}', 1)">
+            +
+          </button>
+
+        </div>
+
+      </div>
+    `;
+  }
+
+  cartTotal.textContent = total;
+}
+
+
+function changeCartQuantity(name, change) {
+
+  cart[name].quantity += change;
+
+  if (cart[name].quantity <= 0) {
+    delete cart[name];
+  }
+
+  updateCart();
+}
+
+
+function sendCartToWhatsApp() {
+
+  if (Object.keys(cart).length === 0) {
+    alert("السلة فارغة");
+    return;
+  }
+
+  let message = "مرحباً، أريد طلب:%0A%0A";
+
+  let total = 0;
+
+  for (let name in cart) {
+
+    const item = cart[name];
+
+    const itemTotal = item.price * item.quantity;
+
+    total += itemTotal;
+
+    message +=
+      "🍽️ " + name +
+      " × " + item.quantity +
+      " = " + itemTotal + " ريال%0A";
+  }
+
+  message +=
+    "%0A💰 الإجمالي: " +
+    total +
+    " ريال";
+
+  window.open(
+    "https://wa.me/967775956223?text=" + message,
+    "_blank"
+  );
+function changeCartQuantity(name, change) {
+
+  cart[name].quantity += change;
+
+  if (cart[name].quantity <= 0) {
+    delete cart[name];
+  }
+
+  updateCart();
+}
+
+
+function removeFromCart(name) {
+
+  if (cart[name]) {
+    delete cart[name];
+    updateCart();
+  }
+
+}
+
+
+function sendCartToWhatsApp() {
+</script>
+
+</html>
